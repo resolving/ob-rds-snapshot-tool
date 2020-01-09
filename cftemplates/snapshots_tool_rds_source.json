@@ -8,13 +8,13 @@
 		},
 		"InstanceNamePattern": {
 			"Type": "String",
-			"Default": "ALL_INSTANCES",
+			"Default": "^production-.*$",
 			"Description": "Python regex for matching cluster identifiers to backup. Use \"ALL_INSTANCES\" to back up every RDS instance in the region."
 		},
 		"BackupInterval": {
 			"Type": "Number",
-			"Default": "24",
-			"Description": "Interval for backups in hours. Default is 24"
+			"Default": "4",
+			"Description": "Interval for backups in hours. Default is 4"
 		},
 		"DestinationAccount": {
 			"Type": "Number",
@@ -28,12 +28,12 @@
 		},
 		"BackupSchedule": {
 			"Type": "String",
-			"Default": "0 1 * * ? *",
-			"Description": "Backup schedule in Cloudwatch Event cron format. Needs to run at least once for every Interval. The default value runs once every at 1AM UTC. More information: http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"
+			"Default": "0 * * * ? *",
+			"Description": "Backup schedule in Cloudwatch Event cron format. Needs to run at least once for every Interval. The default value runs once every hour. More information: http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"
 		},
 		"RetentionDays": {
 			"Type": "Number",
-			"Default": "7",
+			"Default": "30",
 			"Description": "Number of days to keep snapshots in retention before deleting them"
 		},
 		"LogLevel": {
