@@ -8,7 +8,7 @@
 		},
 		"InstanceNamePattern": {
 			"Type": "String",
-			"Default": "^production-.*$",
+			"Default": "^(production|hotfix)-.*$",
 			"Description": "Python regex for matching cluster identifiers to backup. Use \"ALL_INSTANCES\" to back up every RDS instance in the region."
 		},
 		"BackupInterval": {
