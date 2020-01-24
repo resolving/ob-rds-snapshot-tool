@@ -13,7 +13,7 @@
 		},
 		"RetentionDays": {
 			"Type": "Number",
-			"Default": "30",
+			"Default": "10",
 			"Description": "Number of days to keep snapshots in retention before deleting them"
 		},
 		"DestinationRegion": {
